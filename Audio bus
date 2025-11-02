@@ -1,0 +1,19 @@
+import { Howl } from 'howler'
+let current = null
+let muted = JSON.parse(localStorage.getItem('audio.muted')||'false')
+
+function play(src, {loop=true, volume=0.5, fade=400} = {}) {
+  if (current) { try { current.fade(current.volume(), 0, fade); current.once('fade', ()=>current.stop()) } catch {}
+  }
+  current = new Howl({ src:[src], loop, volume: muted?0:volume })
+  current.play()
+  return current
+}
+
+function toggle() {
+  muted = !muted
+  localStorage.setItem('audio.muted', JSON.stringify(muted))
+  if (current) current.mute(muted)
+}
+
+export default { play, toggle }
