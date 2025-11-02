@@ -1,0 +1,13 @@
+import React from 'react'
+import { getTheme, setTheme } from '../lib/theme.js'
+export function ThemeToggle(){
+  const [mode,setMode] = React.useState(getTheme())
+  function change(e){ setMode(e.target.value); setTheme(e.target.value) }
+  return (
+    <select value={mode} onChange={change} aria-label="theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="hella-dark">Hella Dark</option>
+    </select>
+  )
+}
