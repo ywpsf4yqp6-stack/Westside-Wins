@@ -1,0 +1,17 @@
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import audioBus from '../lib/audioBus.js'
+
+export default function GameCard({ title, preview, to, comingSoon=false }){
+  const nav = useNavigate()
+  return (
+    <div
+      onMouseEnter={()=> preview && audioBus.play(preview, {loop:false, volume:0.4})}
+      onClick={()=> comingSoon ? alert('Woodie — Coming Soon') : nav(to)}
+      style={{padding:16,border:'1px solid #555',borderRadius:12,cursor:'pointer'}}
+    >
+      <h3>{title}</h3>
+      <p>{comingSoon ? 'Coming soon' : 'Play now'}</p>
+    </div>
+  )
+}
