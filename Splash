@@ -1,0 +1,22 @@
+import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+
+export default function Splash(){
+  const nav = useNavigate()
+  useEffect(()=>{
+    const to = setTimeout(()=>nav('/'), 1200)
+    const onKey = ()=>nav('/')
+    window.addEventListener('keydown', onKey)
+    return ()=>{ clearTimeout(to); window.removeEventListener('keydown', onKey) }
+  },[nav])
+
+  return (
+    <div style={{height:'100vh',display:'grid',placeItems:'center',background:'#000'}}>
+      <div style={{textAlign:'center',color:'#0ff'}}>
+        <img src="/img/macdre_spinner.gif" alt="" style={{height:96}}/>
+        <h1>West Side Winnings</h1>
+        <p>Loading… press any key</p>
+      </div>
+    </div>
+  )
+}
