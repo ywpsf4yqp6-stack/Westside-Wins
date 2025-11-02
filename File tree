@@ -1,0 +1,16 @@
+public/audio/home_theme.mp3           (empty placeholder ok)
+public/audio/preview_macdre.mp3       (empty)
+public/audio/preview_santaclara.mp3   (empty)
+public/audio/preview_woodie.mp3       (empty)
+public/img/macdre_spinner.gif         (empty)
+src/main.jsx
+src/App.jsx
+src/router.jsx
+src/lib/audioBus.js
+src/lib/theme.js
+src/components/ThemeToggle.jsx
+src/components/BigButton.jsx
+src/components/GameCard.jsx
+src/screens/Splash.jsx
+src/screens/Home.jsx
+src/screens/GamesHub.jsx
