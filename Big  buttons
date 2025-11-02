@@ -1,0 +1,6 @@
+import React from 'react'
+export default function BigButton({children,onClick}) {
+  return <button onClick={onClick} style={{
+    fontSize:24,padding:'16px 28px',borderRadius:12,boxShadow:'0 0 12px rgba(0,255,255,.5)'
+  }}>{children}</button>
+}
