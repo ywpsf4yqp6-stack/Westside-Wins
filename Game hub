@@ -1,0 +1,15 @@
+import React from 'react'
+import GameCard from '../components/GameCard.jsx'
+
+export default function GamesHub(){
+  return (
+    <div style={{padding:24}}>
+      <h2>Games</h2>
+      <div style={{display:'grid',gridTemplateColumns:'repeat(auto-fit,minmax(220px,1fr))',gap:16}}>
+        <GameCard title="Mac Dre Slots" preview="/audio/preview_macdre.mp3" to="/games/macdre"/>
+        <GameCard title="Santa Clara Spins" preview="/audio/preview_santaclara.mp3" to="/games/santaclara"/>
+        <GameCard title="Woodie" preview="/audio/preview_woodie.mp3" to="#" comingSoon/>
+      </div>
+    </div>
+  )
+}
