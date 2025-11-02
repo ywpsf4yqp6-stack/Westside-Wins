@@ -1,0 +1,27 @@
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Splash from './screens/Splash.jsx'
+import Home from './screens/Home.jsx'
+import GamesHub from './screens/GamesHub.jsx'
+
+function Settings() {
+  return <div style={{padding:24}}>
+    <h1>Settings</h1>
+    <p>Theme via toggle in header. More later.</p>
+    <button onClick={()=>{ localStorage.clear(); location.reload() }}>Reset app cache</button>
+  </div>
+}
+
+export function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/splash" element={<Splash/>}/>
+      <Route path="/games" element={<GamesHub/>}/>
+      <Route path="/settings" element={<Settings/>}/>
+      <Route path="*" element={<div style={{padding:24}}>
+        <h1>Not Found</h1><a href="/">Go Home</a>
+      </div>}/>
+    </Routes>
+  )
+}
