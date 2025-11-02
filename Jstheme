@@ -1,0 +1,7 @@
+const KEY = 'theme.mode'
+export function setTheme(mode){
+  document.documentElement.dataset.theme = mode
+  localStorage.setItem(KEY, mode)
+}
+export function getTheme(){ return localStorage.getItem(KEY) || 'dark' }
+export function applySavedTheme(){ setTheme(getTheme()) }
